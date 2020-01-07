@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Product Leaders Institute</title>
+    <title>apaxpoint.tech</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -13,9 +13,9 @@
   </head>
   <body>
     <div class="jumbotron">
-      <h1 class="display-4">Product Leaders Institute</h1>
-      <p class="lead">Get a Job, Get Promoted, Gain Visibility</p>
-      <a href="css/images/Product-Leader-Institute-Logo.jpg"></a>
+      <h1 class="display-4">Apax Point</h1>
+      <p class="lead"></p>
+      <a href=></a>
       <hr class="my-4" />
       <p>Please enter your email address to access our materials</p>
       <form>
@@ -31,7 +31,9 @@
             >We'll never share your email with anyone else.</small
           >
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" id="submit" class="btn btn-primary">
+          Submit
+        </button>
       </form>
     </div>
   </body>
@@ -50,4 +52,15 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"
   ></script>
+  <script>
+    $("#submit").on("click", function(event) {
+        event.preventDefault();
+        var newEmail = $("#exampleInputEmail1")
+          .val()
+          .trim()
+          .post("/api/emails", newEmail, function(data) {
+            console.log(newEmail);
+          });
+    });
+  </script>
 </html>
