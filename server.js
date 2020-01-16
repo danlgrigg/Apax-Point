@@ -1,13 +1,12 @@
 //Set dependencies
 var express = require("express");
-
 var app = express();
 
 // Requiring our models for syncing
 var db = require("./models");
 
 // Set the port of our application
-var PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -15,8 +14,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Router directs
-require("./routing/apiRoutes")(app);
-require("./routing/htmlRoutes")(app);
+require("./routing/apiRoutes.js")(app);
+require("./routing/htmlRoutes.js")(app);
 
 const syncOptions = {
   force: false

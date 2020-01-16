@@ -10,69 +10,64 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
   <body>
     <!-- Logo Brand with Link -->
-    <div class="d-flex justify-content-start">
-    <nav class="navbar navbar-light">
-     <a class="navbar-brand"  href="https://www.apaxpoint.biz/"></a><img src="css/images/Logo_APAX + Emp (4)[6928].png" alt="Apax Point Logo">
-    </nav>
-    </div>
-    <div class="jumbotron">
-      <h3 class="display-8">Blended Learning</h3>
-      <p class="lead"></p>
-      <hr class="my-4"/>
-      <div>
-      <p>Please enter your email address to access our materials</p>
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email Address</label>
-          <input
-            type="email" required
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            
+    <!-- <div class="container"> -->
+      <div class="d-flex justify-content-start">
+        <a class="navbar-brand" href="https://www.apaxpoint.biz/">
+        <nav class="navbar">
+          <img
+          href="https://www.apaxpoint.biz/"
+          src="css/images/Logo_APAX + Emp (4)[6928].png"
+          alt="Apax Point Logo"
           />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
-          >
+        </a>
+        </nav>
+      </div>
+    <!-- </div> -->
+    <!-- Form Section -->
+    <div class="container- justify-content-center">
+      <div class="jumbotron">
+        <h3 class="display-8">Conference Materials</h3>
+        <hr class="my-4" />
+        <div>
+          <p>Please enter your email address to access our materials.</p>
+          <form>
+            <div class="form-group">
+              <input
+                type="email"
+                required
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="example@email.com"
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >We'll never share your email with anyone else.</small
+              >
+
+            <a href="/public/info.html"
+              ><button type="submit" id="submit-email" class="btn btn-light">
+                Submit
+              </button></a
+            >
+          </form>
         </div>
-        <a href="/public/info.html"><button type="submit" id="submit" class="btn btn-primary">
-          Submit
-        </button></a>
-      </form>
+      </div>
     </div>
+    <!-- Footer -->
+    <div class="container-fluid">
+      <nav class="navbar fixed-bottom justify-content-center">
+        <a class="navbar-brand navbar-text">&copy APAXPoint 2020</a>
+      </nav>
     </div>
   </body>
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous">
-  </script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"
-  ></script>
-  <script>
-    
-    $("#submit").on("click", function(event) {
-      // console.log(event)
-        event.preventDefault();
-        var newEmail = $("#exampleInputEmail1")
-          .val()
-          .trim();
+  <!-- Custom Script -->
+  <script src="https://cdnjs.buttflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+  <script src="js/index.js" type="text/javascript"></script>
 
-          $.post("/api/emails", newEmail, function(data) {
-            console.log('test', data);
-          });
-
-    });
-  </script>
+ 
 </html>

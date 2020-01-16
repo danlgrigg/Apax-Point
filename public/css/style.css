@@ -1,8 +1,19 @@
 body {
-   background-color: whitesmoke;
-
+    color: whitesmoke;
+    background-image: linear-gradient(rgba(80, 55, 226,), whitesmoke);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 
 .jumbotron {
-    background-color:  #bada55;
+    background-color: #7F7EFF;
+    box-shadow: .3em .3em 1em grey;
+
+}
+
+form {
+    max-width: 20rem;
+}
+
+.navbar {
 }
